@@ -10,18 +10,31 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --foreground-rgb: 0, 0, 0;
+    --background-color: #ffd836
   }
 }
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background-image: linear-gradient(to bottom, rgba(255, 216, 54, 0.1), rgba(255, 216, 54, 1)),
+                        url('../../public/assets/bbq\ pattern.png');
 }
+
+label {
+  margin-bottom: 16px;
+  font-weight: 700;
+  font-size:21px
+}
+input {
+  outline: none;
+  border-radius: 2px;
+  padding: 5px;
+  border: 1px solid transparent
+
+}
+input:hover{
+  border: 1px solid #554d27  ;
+  
+}
+
