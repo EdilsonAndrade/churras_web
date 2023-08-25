@@ -1,6 +1,7 @@
 import classNames from "classnames";
 import Image from "next/image"
 import { useRouter } from "next/router"
+
 export const Footer = () => {
   const router = useRouter()
   const routerPath = router.pathname;
