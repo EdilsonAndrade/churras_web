@@ -12,6 +12,7 @@
   :root {
     --foreground-rgb: 0, 0, 0;
     --background-color: #ffd836
+    
   }
 }
 
@@ -26,15 +27,42 @@ label {
   font-weight: 700;
   font-size:21px
 }
-input {
+input, textarea {
   outline: none;
   border-radius: 2px;
   padding: 5px;
-  border: 1px solid transparent
+  border: 1px solid grey ;
 
 }
-input:hover{
+input:hover, textarea:hover{
   border: 1px solid #554d27  ;
   
 }
 
+input[type='radio']::after{
+  width: 15px;
+  height: 15px;
+  border-radius: 15px;
+  top: -3px;
+  left: -1px;
+  position: relative;
+  background-color: white;
+  content: '';
+  display: inline-block;
+  visibility: visible;
+  border: 2px solid grey;
+}
+
+input[type='radio']:checked::after{
+  width: 15px;
+  height: 15px;
+  border-radius: 15px;
+  top: -3px;
+  left: -1px;
+  position: relative;
+  background-color: var(--background-color);
+  content: '';
+  display: inline-block;
+  visibility: visible;
+  border: 2px solid var(--background-color);;
+}
