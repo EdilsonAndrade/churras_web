@@ -7,3 +7,15 @@ export interface Barbecue {
   suggestedValue?: number  
 }
 
+export interface Participant {
+  id: string;
+  name: string;
+  barbecueId: string;
+  amount: number;
+  drink: number
+  paid: boolean;
+}
+export type Response = {
+  barbecues:Barbecue[]
+  participants:Participant[]
+}
