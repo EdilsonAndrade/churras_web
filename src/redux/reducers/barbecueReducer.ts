@@ -9,15 +9,13 @@ const barbecueSlice = createSlice({
   name: 'barbecue',
   initialState,
   reducers: {
-
-    addBarbecue(state, action: PayloadAction<Barbecue>) {
-      state.barbecues.push(action.payload)
+    setBarbecues(state, action: PayloadAction<Barbecue[]>) {
+      state.barbecues = action.payload
     }
-
   }
 })
 
-export const { addBarbecue } = barbecueSlice.actions
+export const { setBarbecues} = barbecueSlice.actions
 
 export default barbecueSlice.reducer
 
