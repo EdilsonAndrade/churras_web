@@ -39,7 +39,8 @@ input:hover, textarea:hover{
   
 }
 
-input[type='radio']::after{
+input[type='checkbox']::after{
+  cursor: pointer;
   width: 15px;
   height: 15px;
   border-radius: 15px;
@@ -53,7 +54,8 @@ input[type='radio']::after{
   border: 2px solid grey;
 }
 
-input[type='radio']:checked::after{
+input[type='checkbox']:checked::after{
+  cursor: pointer;
   width: 15px;
   height: 15px;
   border-radius: 15px;
