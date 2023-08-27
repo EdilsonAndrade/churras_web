@@ -1,10 +1,10 @@
 export interface Barbecue {
-  id: string
+  id: string;
   description: string;
   date: Date;
   observation: string;
   onClick?: () => void;
-  suggestedValue?: number
+  suggestedValue?: number;
 }
 
 export interface Participant {
@@ -12,17 +12,17 @@ export interface Participant {
   name: string;
   barbecueId: string;
   amount: number;
-  drink: number
+  drink: number;
   paid: boolean;
 }
 export interface User {
-  email: string
-  password: string
-  passwordConfirmation?: string
+  email: string;
+  password: string;
+  passwordConfirmation?: string;
 }
 
 export interface Response {
-  barbecues: Barbecue[]
-  participants: Participant[]
-  users: User[]
+  barbecues: Barbecue[];
+  participants: Participant[];
+  users: User[];
 }

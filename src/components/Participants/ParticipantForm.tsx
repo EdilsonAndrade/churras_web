@@ -1,9 +1,15 @@
-import { useDispatch } from 'react-redux';
 import { setParticipant } from '@/redux/reducers/participantReducer';
-import React, { useEffect, useRef, useState } from 'react';
 import classNames from 'classnames';
+import React, { useEffect, useRef, useState } from 'react';
+import { useDispatch } from 'react-redux';
 
-export const ParticipantForm = ({ barbecueId, suggestedValue }: { barbecueId: string, suggestedValue: number }) => {
+export const ParticipantForm = ({
+  barbecueId,
+  suggestedValue,
+}: {
+  barbecueId: string;
+  suggestedValue: number;
+}) => {
   const [name, setName] = useState('');
   const [amount, setAmount] = useState(suggestedValue || 0);
   const [drink, setDrink] = useState(0);
@@ -14,63 +20,97 @@ export const ParticipantForm = ({ barbecueId, suggestedValue }: { barbecueId: st
     if (e.key !== 'Enter' || isDisable) return;
 
     handleAddParticipant();
-  }
+  };
   const handleAddParticipant = async () => {
-
-
-    const response = await fetch(process.env.NEXT_PUBLIC_API_URL + '/participant', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
+    const response = await fetch(
+      process.env.NEXT_PUBLIC_API_URL + '/participant',
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name,
+          amount,
+          paid: false,
+          id: Math.floor(Math.random() * 1000).toString(),
+          barbecueId,
+          drink,
+        }),
       },
-      body: JSON.stringify({
-        name,
-        amount,
-        paid: false,
-        id: Math.floor(Math.random() * 1000).toString(),
-        barbecueId,
-        drink
-      })
-    })
+    );
     const data = await response.json();
     dispatch(setParticipant(data.participants));
-    setName('')
-    setAmount(suggestedValue || 0)
-    setDrink(0)
-    nameRef.current?.focus()
-  }
+    setName('');
+    setAmount(suggestedValue || 0);
+    setDrink(0);
+    nameRef.current?.focus();
+  };
 
   useEffect(() => {
-    nameRef.current?.focus()
-  }, [])
+    nameRef.current?.focus();
+  }, []);
 
-  const isDisable = !name || !amount
+  const isDisable = !name || !amount;
 
   return (
     <>
-      <div className="flex tablet:flex-row w-full justify-start items-center mt-10 mobile:flex-col">
+      <div className='flex tablet:flex-row w-full justify-start items-center mt-10 mobile:flex-col'>
         <div>
-          <label htmlFor="name" className='mr-5 mt-1'>Nome:</label>
-          <input ref={nameRef} type="text" required placeholder="Nome" value={name} onChange={(e) => setName(e.target.value)} onKeyDown={handleKeyDown} />
-        </div>
-        <div className="tablet:ml-5 mt-1">
-          <label htmlFor="amount" className='mr-4'>Carnes:</label>
-          <input type="number" min={suggestedValue} placeholder="Contribuição" value={amount} onChange={(e) => setAmount(parseInt(e.target.value))} onKeyDown={handleKeyDown} />
+          <label htmlFor='name' className='mr-5 mt-1'>
+            Nome:
+          </label>
+          <input
+            ref={nameRef}
+            type='text'
+            required
+            placeholder='Nome'
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            onKeyDown={handleKeyDown}
+          />
         </div>
         <div className='tablet:ml-5 mt-1'>
-          <label htmlFor="amount" className='mr-1'>Bebidas:</label>
-          <input type="number" min={0} placeholder="Contribuição" value={drink} onChange={(e) => setDrink(parseInt(e.target.value))} />
+          <label htmlFor='amount' className='mr-4'>
+            Carnes:
+          </label>
+          <input
+            type='number'
+            min={suggestedValue}
+            placeholder='Contribuição'
+            value={amount}
+            onChange={(e) => setAmount(parseInt(e.target.value))}
+            onKeyDown={handleKeyDown}
+          />
         </div>
-
+        <div className='tablet:ml-5 mt-1'>
+          <label htmlFor='amount' className='mr-1'>
+            Bebidas:
+          </label>
+          <input
+            type='number'
+            min={0}
+            placeholder='Contribuição'
+            value={drink}
+            onChange={(e) => setDrink(parseInt(e.target.value))}
+          />
+        </div>
       </div>
       <div className='w-full text-right'>
-        <button disabled={isDisable} type="button" className={classNames("p-2 mt-5 bg-black text-white rounded-md w-32", {
-          'opacity-50 cursor-not-allowed': isDisable
-        })} onClick={handleAddParticipant}>Adicionar</button>
+        <button
+          disabled={isDisable}
+          type='button'
+          className={classNames(
+            'p-2 mt-5 bg-black text-white rounded-md w-32',
+            {
+              'opacity-50 cursor-not-allowed': isDisable,
+            },
+          )}
+          onClick={handleAddParticipant}
+        >
+          Adicionar
+        </button>
       </div>
     </>
-  )
-}
-
-
-
+  );
+};

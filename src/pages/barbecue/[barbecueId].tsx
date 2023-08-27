@@ -1,8 +1,5 @@
-import { DetailPage } from "@/components/Barbecue/DetailPage";
+import { DetailPage } from '@/components/Barbecue/DetailPage';
 
 export default function BarbecueDetailPage() {
-
-  return (
-    <DetailPage />
-  )
+  return <DetailPage />;
 }

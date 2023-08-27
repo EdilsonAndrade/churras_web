@@ -12,7 +12,7 @@
   :root {
     --foreground-rgb: 0, 0, 0;
     --background-color: #ffd836
-    
+
   }
 }
 
@@ -36,7 +36,7 @@ input, textarea {
 }
 input:hover, textarea:hover{
   border: 1px solid #554d27  ;
-  
+
 }
 
 input[type='checkbox']::after{

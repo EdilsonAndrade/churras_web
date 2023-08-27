@@ -1,9 +1,8 @@
-import { Participant } from "@/common/types";
-import { PayloadAction, createSlice } from "@reduxjs/toolkit";
-
+import { Participant } from '@/common/types';
+import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  participants: [] as Participant[]
+  participants: [] as Participant[],
 };
 
 const participantSlice = createSlice({
@@ -11,16 +10,17 @@ const participantSlice = createSlice({
   initialState,
   reducers: {
     setParticipant(state, action: PayloadAction<Participant[]>) {
-      state.participants =action.payload;
+      state.participants = action.payload;
     },
     changePaidStatus(state, action: PayloadAction<string>) {
-      const participant = state.participants.find(p => p.id === action.payload);
+      const participant = state.participants.find(
+        (p) => p.id === action.payload,
+      );
       if (participant) {
         participant.paid = !participant.paid;
       }
-    }
-
-  }
+    },
+  },
 });
 
 export const { setParticipant, changePaidStatus } = participantSlice.actions;
