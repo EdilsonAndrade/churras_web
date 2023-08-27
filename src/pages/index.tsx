@@ -1,5 +1,4 @@
-import { Inter } from 'next/font/google'
-import Login from '../components/Login'
+import Login from '../components/User/Login'
 
 export default function Home() {
   return (
