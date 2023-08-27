@@ -1,10 +1,10 @@
 export interface Barbecue {
-  id:string
+  id: string
   description: string;
   date: Date;
-  observation:string;
+  observation: string;
   onClick?: () => void;
-  suggestedValue?: number  
+  suggestedValue?: number
 }
 
 export interface Participant {
@@ -15,7 +15,14 @@ export interface Participant {
   drink: number
   paid: boolean;
 }
-export type Response = {
-  barbecues:Barbecue[]
-  participants:Participant[]
+export interface User {
+  email: string
+  password: string
+  passwordConfirmation?: string
+}
+
+export interface Response {
+  barbecues: Barbecue[]
+  participants: Participant[]
+  users: User[]
 }
