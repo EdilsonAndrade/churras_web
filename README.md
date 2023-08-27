@@ -1,6 +1,6 @@
 ## Getting Started with Churras Web
 
-First, run the development server:
+Primera coisa, rodar o servidor de desenvolvimento
 
 ```bash
 npm run dev
@@ -9,8 +9,8 @@ yarn dev
 
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abra [http://localhost:3000](http://localhost:3000) com o seu navegador.
 
 ### Env Local
 
-`env.local` file já está ajustado para a api na porta `3000` caso queira alterar se seu ambiente abrir o projeto em outra porta, é ali que vc altera para ter um funcionamento da api
+`env.local` arquivo já está ajustado para a api na porta `3000` caso queira alterar se seu ambiente abrir o projeto em outra porta, é ali que vc altera para ter um funcionamento da api
