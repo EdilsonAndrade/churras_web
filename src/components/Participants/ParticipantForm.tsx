@@ -48,16 +48,16 @@ export const ParticipantForm = ({ barbecueId, suggestedValue }: { barbecueId: st
 
   return (
     <>
-      <div className="flex w-full justify-start items-center mt-10">
+      <div className="flex tablet:flex-row w-full justify-start items-center mt-10 mobile:flex-col">
         <div>
-          <label htmlFor="name" className='mr-1'>Nome:</label>
+          <label htmlFor="name" className='mr-5 mt-1'>Nome:</label>
           <input ref={nameRef} type="text" required placeholder="Nome" value={name} onChange={(e) => setName(e.target.value)} onKeyDown={handleKeyDown} />
         </div>
-        <div className="ml-5">
-          <label htmlFor="amount" className='mr-1'>Carnes:</label>
+        <div className="tablet:ml-5 mt-1">
+          <label htmlFor="amount" className='mr-4'>Carnes:</label>
           <input type="number" min={suggestedValue} placeholder="Contribuição" value={amount} onChange={(e) => setAmount(parseInt(e.target.value))} onKeyDown={handleKeyDown} />
         </div>
-        <div className='ml-5'>
+        <div className='tablet:ml-5 mt-1'>
           <label htmlFor="amount" className='mr-1'>Bebidas:</label>
           <input type="number" min={0} placeholder="Contribuição" value={drink} onChange={(e) => setDrink(parseInt(e.target.value))} />
         </div>

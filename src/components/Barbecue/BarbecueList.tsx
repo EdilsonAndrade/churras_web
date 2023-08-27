@@ -4,7 +4,7 @@ import { RootState } from "@/redux/store";
 import classNames from "classnames";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import { NewBarbecueEvent } from "./NewBarbecueEvent";
+import { NewBarbecueEvent } from "./BarbecueForm";
 import { useRouter } from "next/router";
 import { useDispatch } from "react-redux";
 import { Barbecue, Participant } from "@/common/types";
@@ -44,7 +44,7 @@ export const BarbecueList = () => {
   return (
     <div className={classNames("grid absolute -top-10", {
       'grid-cols-1': !eventsCount,
-      "grid-cols-2 gap-3": !!eventsCount && !showAddNewEvent
+      "mobile:grid-cols-1 tablet:grid-cols-2 gap-3": !!eventsCount && !showAddNewEvent
     })}>
       {!showAddNewEvent ?
         <>

@@ -32,7 +32,7 @@ export const DetailPage = () => {
 
       {barbecue && barbecueId
         ?
-        <div className="flex flex-col justify-between shadow-lg px-3 py-2 bg-white absolute -top-10">
+        <div className="flex flex-col justify-between shadow-lg px-3 py-2 bg-white absolute -top-10 mx-2">
           <button onClick={handleBack} type="button"><ArrowLeftCircle size={20} /></button>
           <div className="w-full flex justify-between" onClick={handleBack}>
             <BarbecueHeader id={barbecueId} date={barbecue.date} description={barbecue.description} observation={barbecue.observation} />
