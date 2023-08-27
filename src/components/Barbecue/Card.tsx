@@ -45,7 +45,7 @@ export default function Card({ description, date, onClick, id, observation }: Ba
         <button type="button" className='flex items-center justify-between w-8 group' onClick={onClick} >
 
           <ParticipantIcon />
-          <span>{participants.length}</span>
+          <span>{participants?.length}</span>
         </button>
         <div className='flex items-center justify-between w-[75px]'>
           <MoneyIcon />
