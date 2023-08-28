@@ -1,1 +1,1 @@
-{"participants":[],"barbecues":[]}
+{"participants":[{"id":"142","barbecueId":"335","name":"asdfasdf","amount":2,"drink":0,"paid":false}],"barbecues":[{"id":"335","description":"teasdfas","date":"2023-08-28T12:04:54.217Z","observation":"sadfasdf","suggestedValue":2}],"users":[]}
